@@ -15,6 +15,7 @@ BuildRequires:  perl-version
 BuildRequires:  perl(Module::CPANTS::Analyse)
 BuildRequires:  perl(Module::Build)
 BuildArch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description 
 Kwalitee is an automatically-measurable gauge of how good your software is.
