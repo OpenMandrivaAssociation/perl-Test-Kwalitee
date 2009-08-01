@@ -1,21 +1,21 @@
-%define module  Test-Kwalitee
-%define name    perl-%{module}
-%define version 1.01
-%define release %mkrel 1
+%define upstream_name    Test-Kwalitee
+%define upstream_version 1.01
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Test the Kwalitee of a distribution before you release it
-License:        GPL or Artistic
-Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Test/%{module}-%{version}.tar.bz2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Test the Kwalitee of a distribution before you release it
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:  perl-version
 BuildRequires:  perl(Module::CPANTS::Analyse)
 BuildRequires:  perl(Module::Build)
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description 
 Kwalitee is an automatically-measurable gauge of how good your software is.
@@ -31,7 +31,7 @@ quality as well.
 Test::Kwalitee and a short test file will do this for you automatically.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Build.PL installdirs=vendor
@@ -52,5 +52,3 @@ rm -rf %{buildroot}
 %doc ChangeLog README
 %{perl_vendorlib}/Test
 %{_mandir}/*/*
-
-
