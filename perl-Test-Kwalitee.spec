@@ -1,15 +1,16 @@
 %define upstream_name    Test-Kwalitee
-%define upstream_version 1.01
+%define upstream_version 1.18
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Release:	1
 
 Summary:	Test the Kwalitee of a distribution before you release it
+
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl-version
@@ -48,31 +49,4 @@ perl Build.PL installdirs=vendor
 %{perl_vendorlib}/Test
 %{_mandir}/*/*
 
-%changelog
-* Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 1.10.0-1mdv2010.0
-+ Revision: 405552
-- rebuild using %%perl_convert_version
-
-* Fri Aug 15 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.01-1mdv2009.0
-+ Revision: 272270
-- update to new version 1.01
-
-  + Thierry Vignaud <tvignaud@mandriva.com>
-    - rebuild
-    - rebuild
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-* Wed Dec 19 2007 Thierry Vignaud <tvignaud@mandriva.com> 0.30-2mdv2008.1
-+ Revision: 133821
-- kill re-definition of %%buildroot on Pixel's request
-
-
-* Thu Nov 30 2006 Guillaume Rousse <guillomovitch@mandriva.org> 0.30-1mdv2007.0
-+ Revision: 88921
-- Import perl-Test-Kwalitee
-
-* Sat Nov 25 2006 Guillaume Rousse <guillomovitch@mandriva.org> 0.30-1mdv2007.1
-- first mdv release
 
