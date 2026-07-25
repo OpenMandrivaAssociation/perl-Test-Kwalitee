@@ -1,15 +1,15 @@
 %define upstream_name    Test-Kwalitee
-%define upstream_version 1.01
+%define upstream_version 1.28
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Test the Kwalitee of a distribution before you release it
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://github.com/karenetheridge/Test-Kwalitee
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/Test-Kwalitee-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl-version
